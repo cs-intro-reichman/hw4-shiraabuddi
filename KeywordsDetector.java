@@ -22,5 +22,70 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
+        int counter = 0;
+        String[] newsentences = new String[sentences.length];
+        for (int i = 0; i < sentences.length; i++) {
+            newsentences[i] = lowerCase(sentences[i]);
+            
+        }
+        for (int i = 0; i < sentences.length; i++) {
+            for (int j = 0; j < keywords.length; j++) {
+                if(contains(newsentences[i], keywords[j])){
+                    System.out.println(sentences[i]);
+                    break;
+
+                }
+                
+            }
+        }
+
+
+    }
+
+    public static String lowerCase(String str) {
+        // Replace the following statement with your code
+        String newstring = "";
+        for (int i = 0; i < str.length(); i++) {
+            if ((str.charAt(i)>64) && (str.charAt(i)<91)){
+                newstring += (char)(str.charAt(i)+32);
+            }
+            else{
+                newstring += str.charAt(i);
+            }
+            
+        }
+        return newstring;
+
+        
+    }
+
+    public static boolean contains(String str1, String str2) {
+        // Replace the following statement with your code
+        String newstr1 = lowerCase(str1);
+        String newstr2 = lowerCase(str2);
+        int counter =0;
+
+        if (newstr1.length() < newstr2.length()){
+            return false;
+        }
+        for (int i = 0; i < newstr2.length(); i++) {
+            for (int j = 0; j < newstr1.length(); j++) {
+                if ((newstr2.charAt(i) == newstr1.charAt(j)) && ((int)newstr1.charAt(j) != 32)){
+                    counter++;
+                    break;
+                }
+                else{
+                    if (j == newstr1.length()){
+                        counter = 0;
+                    }
+                }   
+            }
+            if(counter == newstr2.length()){
+                return  true;
+            }
+            
+        }
+
+        return false;
     }
 }
