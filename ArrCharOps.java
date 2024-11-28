@@ -139,9 +139,8 @@ public class ArrCharOps {
         long calc = 0;
         int arrlength = arr.length-1;
         for (int i = 0; i < arr.length; i++) {
-            calc= arr[i]*7;
-            calc = (long)Math.pow((double)calc, (double)(arrlength-i));
-            hash += (long)calc;
+            calc = (long)Math.pow(7, (double)(arrlength-i));
+            hash += (calc * arr[i]);
         }
         return hash;
     }
