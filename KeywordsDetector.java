@@ -63,30 +63,23 @@ public class KeywordsDetector {
         // Replace the following statement with your code
         String newstr1 = lowerCase(str1);
         String newstr2 = lowerCase(str2);
-        int counter =0;
 
         if (newstr1.length() < newstr2.length()){
             return false;
         }
         for (int i = 0; i < newstr2.length(); i++) {
             for (int j = 0; j < newstr1.length(); j++) {
-                if (newstr2.charAt(i) == newstr1.charAt(j)){
-                    counter++;
-                    break;
-                }
-                else{
-                    if ((j == newstr1.length())){
-                        counter = 0;
+                if (newstr2.charAt(i) == newstr1.charAt(j) && (j+str2.length()<str1.length())){
+                    if (newstr2.equals(str1.substring(j, j+str2.length()))){
+                        return true;
                     }
-                }   
+                }
             }
-            if(counter == newstr2.length()){
-                return  true;
-            }
-            counter = 0;
+                
             
         }
 
         return false;
     }
+
 }
