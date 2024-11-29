@@ -11,7 +11,7 @@ public class MyString {
         System.out.println(contains("happy", "unhappy")); // false
         System.out.println(contains("historical", "story")); // false
         System.out.println(contains("Psychology", "psycho")); // true
-        System.out.println(contains("personality", "sOn")); // true
+        System.out.println(contains("persoNality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
     }
@@ -39,6 +39,9 @@ public class MyString {
         String newstr2 = str2;
 
         if (newstr1.length() < newstr2.length()){
+            return false;
+        }
+        if (newstr1.length() == 0){
             return false;
         }
         for (int i = 0; i < newstr2.length(); i++) {
