@@ -44,7 +44,7 @@ public class MyString {
         for (int i = 0; i < newstr2.length(); i++) {
             for (int j = 0; j < newstr1.length(); j++) {
                 if (newstr2.charAt(i) == newstr1.charAt(j) && (j+str2.length()<=str1.length())){
-                    if (newstr2.equals(str1.substring(j, j+str2.length()))){
+                    if (newstr2.equals(newstr1.substring(j, j+str2.length()))){
                         return true;
                     }
                 }
