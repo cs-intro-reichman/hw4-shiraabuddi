@@ -37,20 +37,15 @@ public class MyString {
         // Replace the following statement with your code
         String newstr1 = lowerCase(str1);
         String newstr2 = lowerCase(str2);
-        newstr1 = removespace(newstr1);
-        newstr1 = removespace(newstr1);
 
         if (newstr1.length() < newstr2.length()){
             return false;
         }
         for (int i = 0; i < newstr2.length(); i++) {
             for (int j = 0; j < newstr1.length(); j++) {
-                if (newstr2.charAt(i) == newstr1.charAt(j)){
-                    if (str2.equals(str1.substring(j, j+str2.length()))){
+                if (newstr2.charAt(i) == newstr1.charAt(j) && (j+str2.length()<str1.length())){
+                    if (newstr2.equals(str1.substring(j, j+str2.length()))){
                         return true;
-                    }
-                    else{
-                        return false;
                     }
                 }
             }
@@ -61,14 +56,5 @@ public class MyString {
         return false;
     }
 
-    public static String removespace(String str) {
-        // Replace the following statement with your code
-        String newstring = "";
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) != 32){
-                newstring += str.charAt(i);
-            }
-        }
-        return newstring;
-    }
+
 }
