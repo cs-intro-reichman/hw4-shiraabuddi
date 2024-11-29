@@ -70,12 +70,12 @@ public class KeywordsDetector {
         }
         for (int i = 0; i < newstr2.length(); i++) {
             for (int j = 0; j < newstr1.length(); j++) {
-                if ((newstr2.charAt(i) == newstr1.charAt(j)) && ((int)newstr1.charAt(j) != 32)){
+                if (newstr2.charAt(i) == newstr1.charAt(j)){
                     counter++;
                     break;
                 }
                 else{
-                    if (j == newstr1.length()){
+                    if ((j == newstr1.length())){
                         counter = 0;
                     }
                 }   
@@ -83,6 +83,7 @@ public class KeywordsDetector {
             if(counter == newstr2.length()){
                 return  true;
             }
+            counter = 0;
             
         }
 
