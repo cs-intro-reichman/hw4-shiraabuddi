@@ -10,7 +10,7 @@ public class MyString {
         System.out.println(contains("unhappy", "happy")); // true
         System.out.println(contains("happy", "unhappy")); // false
         System.out.println(contains("historical", "story")); // false
-        System.out.println(contains("psychology", "psycho")); // true
+        System.out.println(contains("Psychology", "psycho")); // true
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
