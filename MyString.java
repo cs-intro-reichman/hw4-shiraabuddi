@@ -37,11 +37,13 @@ public class MyString {
         // Replace the following statement with your code
         String newstr1 = str1;
         String newstr2 = str2;
-
-        if (newstr1.length() < newstr2.length()){
-            return false;
+        if(str1.isEmpty()){
+            return true;
         }
-        if (newstr1.length() == 0){
+        if(str2.isEmpty()){
+            return true;
+        }
+        if (newstr1.length() < newstr2.length()){
             return false;
         }
         for (int i = 0; i < newstr2.length(); i++) {
