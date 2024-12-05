@@ -15,7 +15,7 @@ public class ArrCharOps {
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
+        System.out.println(compareTo("abcd", ""));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
         System.out.println(compareTo("Abcd", "a"));
@@ -172,7 +172,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        if((str1 == null) || (str2 == null)){
+        if(isempty(str1) || isempty(str2)){
             return -2;
         }
         int index = Math.min(str1.length(), str2.length());
@@ -194,5 +194,12 @@ public class ArrCharOps {
             return 1;
         }
         return 0;
+    }
+
+    public static boolean isempty(String str){
+        if (str.length() == 0){
+            return true;
+        }   
+        return false;
     }
 }

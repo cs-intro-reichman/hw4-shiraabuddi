@@ -37,10 +37,10 @@ public class MyString {
         // Replace the following statement with your code
         String newstr1 = str1;
         String newstr2 = str2;
-        if(str1 == null){
+        if(str1.isEmpty()){
             return true;
         }
-        if(str2 == null){
+        if(str2.isEmpty()){
             return true;
         }
         if (newstr1.length() < newstr2.length()){
